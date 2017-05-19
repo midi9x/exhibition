@@ -1,0 +1,32 @@
+------------------------------------------------------------
+  Plugin list generated with BackWPup version: 3.3.7
+  http://backwpup.com
+  Blog Name: Medical Web展示場
+  Blog URL: http://test-url.site/exhibition
+  Generated on: 2017-05-19 17:40.17
+------------------------------------------------------------
+
+
+すべてのプラグインの情報:
+------------------------------
+Akismet (v.3.2) 作者: Automattic
+	https://akismet.com/
+BackWPup (v.3.3.7) 作者: Inpsyde GmbH
+	http://backwpup.com
+Duplicate Post (v.3.2) 作者: Enrico Battocchi
+	https://duplicate-post.lopo.it/
+Hello Dolly (v.1.6) 作者: Matt Mullenweg
+	http://wordpress.org/plugins/hello-dolly/
+WP Multibyte Patch (v.2.8.1) 作者: Seisuke Kuraishi
+	http://eastcoder.com/code/wp-multibyte-patch/
+
+有効なプラグイン:
+------------------------------
+BackWPup
+Duplicate Post
+
+停止中のプラグイン:
+------------------------------
+Akismet
+Hello Dolly
+WP Multibyte Patch
