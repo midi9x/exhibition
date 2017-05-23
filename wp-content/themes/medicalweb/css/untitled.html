@@ -1,0 +1,42 @@
+[hidden product-id]
+<div class="block-contact">
+    <div class="one-half">
+        <label> Enter your email address: (*)
+            [email* email default:user_email] </label>
+
+        <label>To receive a quotation, you must describe your project:
+            [textarea* describe_project  40x6]</label>
+
+        <label> I would also like to:<br />
+            [checkbox would-like "Receive pricing information" "Receive documentation" "Be contacted by telephone"] </label>
+    </div>
+ 
+    <div class="one-half last">
+        2
+    </div>
+</div>
+
+[cf7mls_step step-1 "Next"]
+
+
+<div class="block-contact">
+    <div class="one-half">
+        To make a request, please identify yourself by filling out the form.
+    </div>
+ 
+    <div class="one-half last">
+        <label> 
+            [text* firt-name default:user_first_name placeholder "First Name (*)"] </label>
+
+        <label> 
+            [text* last-name default:user_last_name placeholder "Last Name (*)"] </label>
+
+        <label> 
+            [text* address placeholder "Address"] </label>
+
+        <label> Tel 
+            [tel* address] </label>
+    </div>
+</div>
+
+[submit "Send"]

@@ -1,6 +1,73 @@
 <?php
 if ( !defined('ABSPATH') ){ die(); }
 
+//function remove cf7 edit form for vendor
+if (current_user_can('yith_vendor')) {
+    add_action('admin_menu', 'remove_wpcf7_vendor');
+    function remove_wpcf7_vendor() {
+        global $submenu;
+        
+        unset($submenu['wpcf7'][0]);
+    }
+}
+
+// ctf7 add post id
+if (function_exists('wpcf7_add_shortcode')) {
+	wpcf7_add_shortcode('hidden', 'wpcf7_sourceurl_shortcode_handler', true);
+	function wpcf7_sourceurl_shortcode_handler($tag) {
+		if (!is_array($tag)) return '';
+		$name = $tag['name'];
+		if (empty($name)) return '';
+		if ($name == 'product-id')
+		$html = '<input type="hidden" name="' . $name . '" value="' . get_the_ID() . '" />';
+
+		return $html;
+	}
+}
+// change select blank in cf7
+function my_wpcf7_form_elements($html) {
+	function ov3rfly_replace_include_blank($name, $text, &$html) {
+		$matches = false;
+		preg_match('/<select name="' . $name . '"[^>]*>(.*)<\/select>/iU', $html, $matches);
+		if ($matches) {
+			$select = str_replace('<option value="">---</option>', '<option value="">' . $text . '</option>', $matches[0]);
+			$html = preg_replace('/<select name="' . $name . '"[^>]*>(.*)<\/select>/iU', $select, $html);
+		}
+	}
+
+	ov3rfly_replace_include_blank('type_of_company', 'Type of company (*)', $html);
+	ov3rfly_replace_include_blank('specialty', 'Specialty (*)', $html);
+	return $html;
+}
+
+add_filter('wpcf7_form_elements', 'my_wpcf7_form_elements');
+
+
+// add short code 
+add_filter( 'wpcf7_form_elements', 'mycustom_wpcf7_form_elements' );
+
+function mycustom_wpcf7_form_elements( $form ) {
+	$form = do_shortcode( $form );
+
+	return $form;
+}
+
+
+function product_short_detail( $atts ) {
+	$id = get_the_ID();
+	$title = get_the_title();
+	$image = wp_get_attachment_image_src( get_post_thumbnail_id( $loop->post->ID ), 'single-post-thumbnail' );
+	$image = $image[0];
+
+	return '<div class="product-short-detail"><h3>' . $title . '</h3>' . '<img class="product-image" src="'. $image .'"></div>';
+
+}
+
+add_shortcode('product_short_detail', 'product_short_detail' );
+
+
+
+
 global $avia_config;
 
 /*

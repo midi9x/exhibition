@@ -26,3 +26,70 @@ Mobile Styles
   /* Add your Mobile Styles here */
 
 }
+
+/* Add by midi*/
+.wpcf7-checkbox span.wpcf7-list-item {
+    display: block;
+    margin-left: 0;
+}
+
+.one-half,
+.one-third {
+    position: relative;
+    margin-right: 4%;
+    float: left;
+        margin-bottom: 20px;
+ 
+}
+ 
+.one-half { width: 48%; }
+.one-third { width: 30.66%; }
+ 
+.last {
+    margin-right: 0 !important;
+    clear: right;
+}
+ 
+@media only screen and (max-width: 767px) {
+    .one-half, .one-third {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+.block-contact {
+	display: block;
+    overflow: hidden;
+}
+.block-contact label {
+    font-size: 13px!important;
+}
+#fancybox-outer {
+   padding: 20px;
+}
+select.wpcf7-form-control {
+    margin-bottom: 20px!important;
+    width: 100%!important;
+}
+.wpcf7-radio .wpcf7-list-item {
+    margin-bottom: 15px;
+}
+.product-short-detail {
+	text-align: center;
+}
+.product-short-detail  .product-image {
+	width: 75%;
+	margin-top: 3%;
+}
+.popup-action {
+        margin-left: 35%;
+}
+form.wpcf7-form, fieldset.fieldset-cf7mls {
+	margin-bottom: 0px!important;
+}
+:focus {
+    outline: none;
+}
+.wpcf7-not-valid-tip {
+	color: #f00!important;
+	margin-top: -20px;
+}
